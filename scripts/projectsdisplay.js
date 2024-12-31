@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!isProfessional) {
         let iconPath = '';
         if (project.skills.includes('Music Production')) {
-          iconPath = '/assets/icons/Music.svg'; // Music icon
+          iconPath = '/portfolio/assets/icons/Music.svg'; // Music icon
         } else if (project.skills.includes('Digital Painting') || project.skills.includes('Character Design')) {
-          iconPath = '/assets/icons/Art.svg'; // Art icon
+          iconPath = '/portfolio/assets/icons/Art.svg'; // Art icon
         } else if (project.skills.includes('Animation') || project.skills.includes('Storyboarding')) {
-          iconPath = '/assets/icons/Animation.svg'; // Animation icon
+          iconPath = '/portfolio/assets/icons/Animation.svg'; // Animation icon
         }
   
         // Include the icon only if a valid path was determined
