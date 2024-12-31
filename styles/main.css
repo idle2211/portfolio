@@ -1,10 +1,5 @@
 @font-face {
   font-family: "Perfect Dos";
-  src: url("/assets/fonts/Perfect DOS VGA 437 Win.ttf") format("opentype");
-}
-
-@font-face {
-  font-family: "Perfect Dos";
   src: url("/portfolio/assets/fonts/Perfect DOS VGA 437 Win.ttf") format("opentype");
 }
 
@@ -226,8 +221,8 @@ body {
   width: 80px;
   height: 80px;
   background: rgba(255, 255, 255, 1);
-  mask: url('/assets/icons/play-icon.svg') no-repeat center;
-  -webkit-mask: url('/assets/icons/play-icon.svg') no-repeat center;
+  mask: url('/portfolio/assets/icons/play-icon.svg') no-repeat center;
+  -webkit-mask: url('/portfolio/assets/icons/play-icon.svg') no-repeat center;
   mask-size: contain;
   -webkit-mask-size: contain;
 }
