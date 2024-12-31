@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de Daniel Mamulat - Découvrez mes projets et compétences.">
+  <title>Accueil | Portfolio</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/homepage.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.0.0/dist/lazyload.min.js"></script>
+  <script defer src="scripts/main.js"></script>
+  <script src="scripts/homepage.js"></script>
+  <script src="scripts/projectsdisplay.js"></script>
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <img src="assets/images/loading_anim.webp" alt="">
+    <p id="dots"> </p>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <nav id="navbar">
+      <a href="index.html" aria-label="Accueil" class="navbar-icon">
+        <img src="assets/icons/heart_icon.png" alt="Accueil" class="heart default">
+        <img src="" alt="" class="heart animation">
+        <img src="assets/icons/heart_icon_glow19.png" alt="Home Glowing" class="heart glowing">
+      </a>
+      <a class="link-space" href="projects.html">Projets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="main-header" class="main-header">
+    <div id="header-video-container">
+      <video autoplay muted loop id="header-video" aria-hidden="true"></video>
+    </div>
+    <div id="header-overlay">
+      <h1>Daniel Mamulat</h1>
+      <div class="rotating-cube">
+        <div class="cube-face front">Sound Designer</div>
+        <div class="cube-face back">Artist</div>
+        <div class="cube-face right">Music Producer</div>
+        <div class="cube-face left">Animator</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About Section -->
+  <section id="about">
+
+    <h2>A Propos de Moi</h2>
+    <div class="canvas-container">
+      <div class="vignette-about"></div>
+      <canvas id="gridCanvas">
+      </canvas>
+      <div class="description active">
+        <h3>Introduction</h3>
+        <p>Je m'appelle Daniel Mamulat, et je suis actuellement étudiant spécialisé dans la production musicale, l'illustration, le pixel art et l'animation 2D. Passionné par l’alliance du son et de l’image, je crée des expériences uniques et immersives. Que ce soit en composant des bandes sonores dynamiques, en réalisant des animations précises ou en illustrant des designs captivants, j'apporte créativité et précision à chaque projet.
+        </p>
+      </div>
+      <div class="description">
+        <h3>Etudes</h3>
+        <p>Je poursuis des études en multimédia et Internet, où j'explore divers domaines créatifs tout en consolidant des bases solides dans les disciplines techniques et artistiques. Mes cours incluent le développement, l'illustration numérique, la conception sonore et les techniques d'animation, me dotant des outils indispensables pour exprimer mes idées et raconter des histoires à travers différents médias.
+        </p>
+      </div>
+      <div class="description">
+        <h3>Compétences et expertise</h3>
+        <p>Au fil des années, j'ai perfectionné mes compétences en production musicale, en utilisant des outils tels qu'Ableton Live et FL Studio, ainsi qu'en art numérique, en maîtrisant des logiciels comme Photoshop, Clip Studio Paint et Aseprite pour le pixel art. Mon expérience inclut également l'animation 2D, un domaine où j'aime donner vie à des idées grâce au mouvement et à la narration. <br>En plus de mes compétences en production musicale et art numérique, je m'engage également à respecter les standards de qualité du web, notamment en suivant la certification <b>Opquast</b> pour garantir des sites web accessibles et performants.
+        </p>
+      </div>
+      <div class="description">
+        <h3>Explorez et contactez-moi</h3>
+        <p>Je suis toujours à la recherche d’opportunités de collaboration et de développement, que ce soit à travers de nouveaux projets ou des expériences d’apprentissage. N'hésitez pas à explorer mon portfolio pour découvrir mes réalisations, ou à me contacter pour discuter de la manière dont nous pouvons créer ensemble quelque chose d'extraordinaire !
+        </p>
+      </div>
+    </div>
+
+    <div class="about-container">
+
+
+      <button id="speedUp" class="next">></button>
+    </div>
+
+
+
+  </section>
+
+  <!-- Personal Projects Section -->
+  <div class="professional-grid">
+    <h2 class="projects-h2">Quelques projets</h2>
+    <!-- Personal Projects Section -->
+    <section id="personal-projects">
+      <h2 class="project-title">Projets Personnels</h2>
+      <div class="projects-row personal-row">
+        <!-- for modals -->
+      </div>
+      <div class="redirect-link">
+        <a href="projects.html#personal" class="button projectlink">Voir Plus</a>
+      </div>
+      
+    </section>
+  
+    <!-- School & Professional Projects Section -->
+    <section id="school-projects">
+      <h2 class="project-title">Projets Scolaires et Professionnels</h2>
+      <div class="projects-row school-row">
+        <!-- for links -->
+      </div>
+      <div class="redirect-link">
+      <a href="projects.html#school" class="button projectlink">Voir Plus</a>
+    </div>
+    </section>
+  </div>
+
+<!-- Modal Structure -->
+<div id="project-modal" class="modal">
+  <div class="modal-content" id="modal-content">
+    <div class="modal-media">
+      <img src="" alt="" id="modal-image">
+    </div>
+
+    <!-- modal content -->
+  </div>
+  <span class="modal-close" onclick="closeModal()">&times;</span>
+</div>
+
+<section id="reviews">
+  <div class="review">
+    <h3>Dov Calvo, Directeur d’ADFSAP</h3>
+    <p>
+      "Daniel a fait une excellente impression pendant son stage de 15 jours chez ADFSAP. Chargé de créer un portail web pour promouvoir nos services, il s’est rapidement familiarisé avec WordPress et a livré une plateforme professionnelle et conviviale qui répondait parfaitement à nos besoins. Daniel a fait preuve de compétences techniques remarquables, de créativité et d’une capacité à travailler de manière autonome dans des délais serrés. Je le recommande sans réserve pour tout projet nécessitant dévouement et expertise."
+    </p>
+  </div>
+  <div class="review">
+    <h3>Aryan Inc, camarade de classe</h3>
+    <p>
+      "Collaborer avec Daniel dans des projets de groupe a toujours été une expérience positive. Son souci du détail et ses compétences solides en design graphique ont constamment amélioré la qualité de notre travail. C’est un camarade fiable et créatif qui apporte une réelle valeur à chaque projet."
+    </p>
+  </div>
+  <div class="review">
+    <h3>Sacha Doukhan, camarade de classe</h3>
+    <p>
+      "Daniel m’a énormément aidé avec mes projets en programmation. Que ce soit pour déboguer ou pour comprendre un concept difficile, il a toujours été patient et clair dans ses explications. Grâce à ses conseils, j’ai pu surmonter des défis et améliorer mes compétences en programmation. Les compétences et la disponibilité de Daniel pour aider font de lui quelqu’un d’exceptionnel."
+    </p>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <footer id="contact">
+    <div class="contact-vignette"></div>
+    <div class="diagonal">
+      <canvas id="diagonalLines"></canvas>
+    </div>
+
+    <h2 class="contact-h2">Contact</h2>
+    <div class="footer-container">
+
+      <div class="cv-container"><img src="assets/icons/CV.svg" alt="CV"><p>CV : <a href="assets/documents/CV_MAMULAT_Daniel.pdf" target="_blank">Télécharger</a></p></div>
+      <div class="linkedin-container"><img src="assets/icons/LinkedIn.svg" alt=""><p>LinkedIn : <a href="https://fr.linkedin.com/in/daniel-mamulat-633a0a296" target="_blank">Daniel Mamulat</a></p></div>
+    </div>
+
+
+  </footer>
+</body>
+
+<script>
+  
+  const canvas = document.getElementById('gridCanvas');
+  const ctx = canvas.getContext('2d');
+  const button = document.getElementById('speedUp');
+  const aboutSection = document.querySelector("#about h2");
+
+  // Canvas setup
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const gridSize = 50; 
+  let offsetX = 0;     
+  let offsetY = 0;     
+
+  const speedControl = { currentSpeed: 50 }; 
+  const gridProperties = { lineWidth: 0.3 }; 
+
+  // grid
+  function drawGrid() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = "#fff";
+    ctx.lineWidth = gridProperties.lineWidth; 
+
+    const startX = -gridSize + (offsetX % gridSize);
+    const startY = -gridSize + (offsetY % gridSize);
+
+    // vertical lines
+    for (let x = startX; x < canvas.width; x += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, canvas.height);
+      ctx.stroke();
+    }
+
+    // horizontal lines
+    for (let y = startY; y < canvas.height; y += gridSize) {
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(canvas.width, y);
+      ctx.stroke();
+    }
+  }
+
+  // Animation loop
+  function animateGrid(deltaTime) {
+    offsetX += (speedControl.currentSpeed * deltaTime) / 1000; 
+    offsetY += (speedControl.currentSpeed * deltaTime) / 1000;
+    drawGrid(); // Redraw the grid
+    requestAnimationFrame((time) => {
+      animateGrid(time - lastFrameTime); 
+      lastFrameTime = time; 
+    });
+  }
+
+  // GSAP speed transition with easing
+  function changeSpeed(newSpeed, duration) {
+    gsap.to(speedControl, {
+      currentSpeed: newSpeed, 
+      duration: duration,
+      ease: "power1.inOut", // easing effect (ease in and out)
+    });
+  }
+
+  // GSAP lineWidth transition
+  function changeLineWidth(newLineWidth, duration) {
+    gsap.to(gridProperties, {
+      lineWidth: newLineWidth, 
+      duration: duration,
+      ease: "power1.Out", // easing effect
+    });
+  }
+
+  // Button click event
+  button.addEventListener("click", () => {
+    // Speed up with ease-in
+    changeSpeed(1000, 1); 
+
+   
+    changeLineWidth(1, 0.7); 
+
+    // Revert to base speed and line width after 3 seconds
+    setTimeout(() => {
+      changeSpeed(100, 1); // Speed back to base speed
+      changeLineWidth(0.3, 1); // Line width back to 0.5
+    }, 750);
+
+    gsap.to(aboutSection, {
+        duration: 1, // Animation duration
+        ease: "power2.inOut", // Ease effect
+        textShadow: "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 10px #18dcff, 0 0 20px #18dcff, 0 0 30px #18dcff, 0 0 45px #18dcff, 0 0 65px #18dcff",
+        onComplete: () => {
+          // Revert the animation back
+          gsap.to(aboutSection, {
+            duration: 1,
+            ease: "power2.inOut",
+            textShadow: "0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #18dcff, 0 0 0px #18dcff, 0 0 0px #18dcff, 0 0 0px #18dcff, 0 0 0px #18dcff",
+          });
+        }
+      });
+  });
+
+  // Start animation
+  let lastFrameTime = performance.now();
+  requestAnimationFrame((time) => {
+    lastFrameTime = time;
+    animateGrid(0);
+  });
+
+
+
+  (function () {
+  const canvas = document.getElementById('diagonalLines');
+  const ctx = canvas.getContext('2d');
+
+  // Canvas setup
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const lineWidth = 10; // Line thickness
+  const lineSpacing = 30; // Space between lines
+  const speed = 1.5; // Speed in pixels per frame
+  let offset = 0;
+  let lastTimestamp = 0;
+
+  // Resize canvas dynamically when the window size changes
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  function drawLines() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+    ctx.beginPath();
+
+    const diagSpacing = lineSpacing + lineWidth; // Combined space of one line and gap
+    const diagonalLength = Math.sqrt(canvas.width ** 2 + canvas.height ** 2); // Diagonal length of the canvas
+
+    // Loop through and draw diagonal lines
+    for (let x = -diagonalLength; x < canvas.width + diagonalLength; x += diagSpacing) {
+      ctx.moveTo(x + offset, 0); // Top edge
+      ctx.lineTo(x - canvas.height + offset, canvas.height); // Bottom edge
+    }
+
+    ctx.strokeStyle = '#555';
+    ctx.lineWidth = lineWidth;
+    ctx.stroke();
+  }
+
+  function animate(timestamp) {
+    if (!lastTimestamp) lastTimestamp = timestamp; 
+
+    
+    const deltaTime = timestamp - lastTimestamp;
+    lastTimestamp = timestamp;
+
+    // Adjust offset based on elapsed time and speed
+    offset -= (speed * deltaTime) / 16.67; 
+    if (offset <= -lineSpacing) {
+      offset = 10; // Reset offset to create infinite effect
+    }
+
+    drawLines();
+    requestAnimationFrame(animate);
+  }
+
+  // Start the animation
+  requestAnimationFrame(animate);
+})();
+
+
+
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+
+</html>
