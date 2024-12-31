@@ -1,0 +1,304 @@
+.no-scroll {
+  width: 100%;
+  overflow: hidden !important;
+  height: 100vh;
+
+}
+
+.visit-link {
+  color: cyan;
+  text-decoration: none;
+}
+
+.visit-link:hover {
+  color: white;
+  animation: bulb-hovered 0.15s infinite, bulb-hovered2 0.2s;
+}
+
+.visit-link:active {
+  color: white;
+  animation: bulb 0.15s infinite;
+}
+
+header {
+  position: static;
+}
+
+.projects-works {
+  position: relative;
+}
+
+.select-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+  margin-left: 150px;
+  margin-top: 35px;
+}
+
+header h1 {
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+
+.projects-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+  font-size: 1.8rem;
+}
+
+/* General Grid Layout */
+.professional-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Row Styling */
+.projects-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  /* Allows horizontal scrolling for smaller screens */
+}
+
+
+#projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  margin: 50px;
+}
+
+/* Project Card */
+.project-card {
+  position: relative;
+  border: 2px solid white;
+  padding: 0.5rem;
+  background-color: #222;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.3s ease, flex 0.3s ease;
+  transform-origin: center;
+  overflow: hidden;
+}
+
+.project-card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.project-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transform: translate(25.5%, 0%);
+}
+
+.project-type-icon {
+  width: 85px;
+  height: 85px;
+  background-color: white;
+}
+
+.project-card img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+}
+
+.project-info {
+  margin-top: 10px;
+}
+
+.projects-row .project-card:hover {
+  transform: scale(1.1);
+  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 30px -7px #000000, 10px 0px 30px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  border: 3px solid #ffffff;
+  z-index: 5;
+}
+
+/* Modal container */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal content */
+.modal-content {
+  background: #000000;
+  padding: 20px;
+  border: 2px solid white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 850px;
+  width: calc(100% - 40px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Media inside the modal */
+.modal-media img,
+.modal-media video {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.project-card img.thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  font-family: "Perfect Dos";
+  font-size: 1.4rem;
+  transition: all 0.1s ease-in-out;
+}
+
+button:hover {
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #18dcff, 0 0 30px #18dcff, 0 0 40px #18dcff, 0 0 55px #18dcff, 0 0 75px #18dcff;
+  animation: bulb-hovered 0.15s infinite, bulb-hovered2 0.2s;
+
+}
+
+button.active {
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fbff18, 0 0 30px #fbff18, 0 0 40px #fbff18, 0 0 55px #fbff18, 0 0 75px #fbff18;
+  animation: bulb 0.15s infinite;
+
+  color: white;
+}
+
+@keyframes bulb-hovered2 {
+  0% {
+    text-shadow: 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #FFF, 0 0 0px #18dcff, 0 0 0px #18dcff, 0 0 0px #18dcff, 0 0 0px #18dcff, 0 0 0px #18dcff;
+  }
+
+  100% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 5px #18dcff, 0 0 5px #18dcff, 0 0 40px #18dcff, 0 0 55px #18dcff, 0 0 75px #18dcff;
+  }
+}
+
+@keyframes bulb-hovered {
+  0% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #18dcff, 0 0 30px #18dcff, 0 0 40px #18dcff, 0 0 55px #18dcff, 0 0 75px #18dcff;
+  }
+
+  10% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 5px #18dcff, 0 0 5px #18dcff, 0 0 40px #18dcff, 0 0 55px #18dcff, 0 0 75px #18dcff;
+  }
+
+  20% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 5px #18dcff, 0 0 5px #18dcff, 0 0 40px #18dcff, 0 0 55px #18dcff, 0 0 75px #18dcff;
+  }
+
+  100% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 5px #18dcff, 0 0 5px #18dcff, 0 0 40px #18dcff, 0 0 55px #18dcff, 0 0 75px #18dcff;
+  }
+}
+
+@keyframes bulb {
+  0% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fbff18, 0 0 10px #fbff18, 0 0 20px #fbff18, 0 0 55px #fbff18, 0 0 75px #fbff18;
+  }
+
+  10% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fbff18, 0 0 30px #fbff18, 0 0 40px #fbff18, 0 0 55px #fbff18, 0 0 75px #fbff18;
+  }
+
+  20% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fbff18, 0 0 30px #fbff18, 0 0 40px #fbff18, 0 0 55px #fbff18, 0 0 75px #fbff18;
+  }
+
+  100% {
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #fbff18, 0 0 30px #fbff18, 0 0 40px #fbff18, 0 0 55px #fbff18, 0 0 75px #fbff18;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  #projects-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .select-button {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 0px;
+    margin-top: 30px;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  #projects-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+}

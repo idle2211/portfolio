@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/projects.css">
+  <link rel="stylesheet" href="styles/projects-details.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.0.0/dist/lazyload.min.js"></script>
+  <script defer src="scripts/main.js"></script>
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+
+<body>
+      <!-- Loading Screen -->
+  <div id="loading-screen">
+    <img src="assets/images/loading_anim.webp" alt="">
+    <p id="dots"> </p>
+  </div>
+  <header>
+  </header>
+  <button onclick="history.back()" class="back-link">Retour</button>
+  <div id="project-details-container">
+    <!-- Project details will be populated here -->
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the project ID from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = urlParams.get('id');
+
+      if (!projectId) {
+        console.error('No project ID found in the URL.');
+        return;
+      }
+
+      // Fetch the project data from the JSON file
+      fetch('data/projects.json')
+        .then(response => response.json())
+        .then(data => {
+          const professionalProjects = data.portfolio.professionalProjects.professional;
+          
+
+        // Function to format the date
+        function formatDate(dateString) {
+                const [year, month] = dateString.split("-");
+                const date = new Date(year, month - 1); 
+                return date.toLocaleString("fr-FR", { month: "long", year: "numeric" });
+                }
+          // Find the project by ID
+          const project = professionalProjects.find(p => p.id === projectId);
+          const formattedDate = formatDate(project.date);
+                  const headerh1 = document.querySelector('header')
+        headerh1.innerHTML = `<h1>${project.title}</h1>`
+          
+          if (project) {
+            // Populate the page with the project details
+            const projectDetailsContainer = document.querySelector('#project-details-container');
+            projectDetailsContainer.innerHTML = `
+            <div class="paragraph-detail">
+                <div class="info-container">
+                <span><b>Date</b>: ${formattedDate}</span>
+                <span><b>Logiciels</b>: ${project.softwaresUsed}</span>
+                <span><b>Langages utilisés</b>: ${project.languagesUsed}</span>
+                <span><b>Compétences développées</b>: ${project.skills}</span>
+                <span><b>Travail</b>: ${project.team}</span>
+                <p>${project.description2}</p>
+              </div>
+              ${project.video ? `
+                <div class="project-video">
+                  <video src="${project.video}" controls preload="metadata"></video>
+                </div>
+            
+              ` : ''}
+              ${project.image1 ? `<img src="${project.image1}" alt="${project.title} Image" />` : ''}
+              ${project.gif ? `<img src="${project.gif}" alt="${project.title} Animation" />` : ''}
+            </div>
+            <div class="paragraph-detail2">
+                 ${project.image2 ? `<img src="${project.image2}" alt="${project.title} Image" />` : ''}
+                 ${project.image3 ? `<img src="${project.image3}" alt="${project.title} Image" />` : ''}
+                 </div>`
+          } else {
+            console.error('Project not found.');
+          }
+        })
+        .catch(error => {
+          console.error('Error loading project data:', error);
+        });
+
+
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+</body>
+</html>

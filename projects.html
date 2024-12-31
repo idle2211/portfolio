@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez les projets personnels et scolaires/professionnels de Daniel Mamulat.">
+  <title>Projets | Portfolio</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/projects.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@15.0.0/dist/lazyload.min.js"></script>
+  <script defer src="scripts/main.js"></script>
+  <script defer src="scripts/projects.js"></script>
+  <script src="scripts/projectsdisplay.js"></script>
+  <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <img src="assets/images/loading_anim.webp" alt="">
+    <p id="dots"> </p>
+  </div>
+
+  <!-- Navbar -->
+  <header>
+    <nav id="navbar">
+      <a href="index.html" aria-label="Accueil" class="navbar-icon">
+        <img src="assets/icons/heart_icon.png" alt="Accueil" class="heart default">
+        <img src="" alt="" class="heart animation">
+        <img src="assets/icons/heart_icon_glow19.png" alt="Home Glowing" class="heart glowing">
+      </a>
+    </nav>
+  </header>
+
+
+  <section class="projects-works">
+    <div class="projects-title">
+      <h1>Mes Projets</h1>
+    </div>
+    <div class="select-button">
+      <button id="btn-personal">Personnels</button>
+      <button id="btn-school">Scolaires/Professionnels</button>
+    </div>
+    <!-- Tabs Section -->
+    <div id="projects-container" class="projects-row"></div>
+    <!-- Personal Projects Section -->
+
+    <!-- Modal Structure -->
+    <div id="project-modal" class="modal">
+      <div class="modal-content" id="modal-content">
+        <div class="modal-media">
+          <img src="" alt="" id="modal-image">
+        </div>
+  
+        <!-- Modal content dynamically inserted here -->
+      </div>
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+    </div>
+  </section>
+  
+
+</body>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+</html>
