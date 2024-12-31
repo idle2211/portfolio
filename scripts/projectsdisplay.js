@@ -91,10 +91,12 @@ document.addEventListener('DOMContentLoaded', function () {
   function openModal(project) {
     const modal = document.querySelector('#project-modal');
     const modalContent = document.querySelector('#modal-content');
-
+    const isPhone = window.innerWidth <= 768; // Adjust the breakpoint as needed
     // Prevent scrolling when the modal is open
     document.body.classList.add('no-scroll');
+    if (!isPhone) {
     window.lenis.stop(); // Stop Lenis from handling the scroll 
+  }
 
   
     // Start by displaying the placeholder
@@ -148,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function closeModal() {
   const modal = document.querySelector('#project-modal');
   const video = modal.querySelector('.modal-video'); // Find the video element
-
+  const isPhone = window.innerWidth <= 768
   // Pause the video if it is playing
   if (video) {
     video.pause();
@@ -159,7 +161,9 @@ function closeModal() {
 
   // Restore scrolling when the modal is closed
   document.body.classList.remove('no-scroll');
+  if (!isPhone) {
   window.lenis.start(); // Start Lenis scroll behavior again
+  }
 }
 
 // Make closeModal globally accessible
